@@ -1,0 +1,14 @@
+#VScode
+
+.vscode/
+
+#Node
+
+node_modules/
+
+#Variables privadas
+
+.env
+
+#Logs
+*.log
