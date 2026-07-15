@@ -5,7 +5,7 @@
 async function cargarComponente(nombreArchivo, idDestino) {
     //fetch pide al archivo header.html y cuando llega lo mete dentro de un div que sirve como placeholder "marcador de posicion"
 
-    const respuesta = await fetch('partials/$nombreArchivo');
+    const respuesta = await fetch(`partials/${nombreArchivo}`);
     const html = await respuesta.text();
     document.getElementById(idDestino).innerHTML = html;
 }
