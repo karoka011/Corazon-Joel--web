@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="page-header">
+        <h2>Quiero ser voluntario</h2>
+        <p>Regístrate para formar parte de Arrulladoras en Guadalajara</p>
+
+    </section>
+
+    <section class="registro-content">
+        <form id="form-registro">
+
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input type="text" id="edad" name="edad" min="18" max="70" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ocupacion">Ocupacion</label>
+                <input type="text" id="ocupacion" name="ocupacion"
+                    placeholder="Ej. Estudiante, Enfermero/a, Psicologo/a..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="motivacion">¿Por qué te gustaria participar?</label>
+                <textarea name="motivacion" id="motivacion" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="hospital">Hospital de preferencia</label>
+                <select name="hospital" id="hospital">
+                    <option value="hospital-1">Hospital Civil de Guadalajara</option>
+                    <option value="hospital-1">Hospital Civil Juan I. Menchaca</option>
+                    <option value="hospital-1">Hospital General de Occidente</option>
+                    <option value="otro">Otro / No estoy seguro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="disponibilidad">Disponibilidad de horario</label>
+                <select name="disponibilidad" id="disponibilidad">
+                    <option value="manana">Mañanas</option>
+                    <option value="tarde">Tardes</option>
+                    <option value="fin-semana">Fines de semana</option>
+                    <option value="flexible">Flexible</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="celular">Numero de celular</label>
+                <input type="tel" id="celular" name="celular" required placeholder="Ej +52 5578902345">
+            </div>
+
+            <button type="submit" class="btn">Enviar registro</button>
+
+        </form>
+    </section>
+
+
+    <div id="footer-placeholder"></div>
+    <script src="js/includes.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+
+</html>
