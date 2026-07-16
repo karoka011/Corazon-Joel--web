@@ -107,9 +107,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (hospital.value === '') {
             errorHospital.textContent = ' Por favor selecciona un hopital de preferencia.';
             esValido = false;
+
         } else {
             errorHospital.textContent = '';
         }
+
+
+
+        //VALIDACION: DISPONIBILIDAD
+        const disponibilidad = document.getElementById('disponibilidad');
+        const errorDisponibilidad = document.getElementById('error-disponibilidad');
+
+        if (disponibilidad.value === '') {
+            errorDisponibilidad.textContent = 'Por favor selecciona tu disponibilidad.';
+            esValido = false;
+
+        } else {
+            errorDisponibilidad.textContent = '';
+        }
+
+
+
 
 
 
