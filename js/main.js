@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let esValido = true; //cuando algo falle cambia  false
 
+
+
         //VALIDACION DEL NOMBRE
         //validar que no este vacio el campo y que al menos tenga nombre y apellido
         const nombre = document.getElementById('nombre');
         const errorNombre = document.getElementById('error-nombre');
-        const nombreLimpio = nombre.value.trim();
+        const nombreLimpio = nombre.value.trim(); //trm quita espacios al inicio o al final
 
         if (nombreLimpio === '') {
             errorNombre.textContent = 'Por favor ingresa tu nombre completo';
@@ -25,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             errorNombre.textContent = '';
         }
+
+
 
 
         //VALIDACION DE LA EDAD
@@ -53,6 +57,25 @@ document.addEventListener('DOMContentLoaded', () => {
             errorEdad.textContent = '';
         }
 
+
+
+
+        //VALIDACION DE LA OCUPACION
+        const ocupacion = document.getElementById('ocupacion');
+        const errorOcupacion = document.getElementById('error-ocupacion');
+        const ocupacionLimpia = ocupacion.value.trim();
+
+        if (ocupacionLimpia === '') {
+            errorOcupacion.textContent = 'Por favor indica tu ocupación.';
+            esValido = false;
+
+        } else if (ocupacionLimpia.length < 3) {
+            errorOcupacion.textContent = 'Ese dato parece incompleto, por favor detállalo un poco más.';
+            esValido = false;
+
+        } else {
+            errorOcupacion.textContent = '';
+        }
 
 
 
