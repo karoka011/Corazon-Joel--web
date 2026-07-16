@@ -147,6 +147,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
+
+        //VALIDACION: CELULAR
+        const celular = document.getElementById('celular');
+        const errorCelular = document.getElementById('error-celular');
+        const celularDigitos = celular.value.replace(/[\s\-+]/g, '');
+        const regexCelular = /^\d{10,13}$/;
+
+        if (celularDigitos === '') {
+            errorCelular.textContent = 'Por favor ingresa tu número de celular';
+            esValido = false;
+
+        } else if (!regexCelular.test(celularDigitos)) {
+            errorCelular.textContent = 'Ingresa un número válido (10 digitos, puedes incluir +52)';
+            esValido = false;
+        } else {
+            errorCelular.textContent = '';
+        }
+
+
         if (esValido) { //solo lo activamos cuando todas las validaciones sean correctas
             console.log('Formulario válido, listo para enviar a la base de datos')
             //form.submit();   //se activara cuando conectemos a fs
