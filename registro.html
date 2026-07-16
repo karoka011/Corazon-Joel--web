@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Registro</title>
     <link rel="stylesheet" href="css/style.css">
@@ -28,7 +28,7 @@
 
             <div class="form-group">
                 <label for="edad">Edad</label>
-                <input type="text" id="edad" name="edad" min="18" max="70" required>
+                <input type="text" id="edad" name="edad" min="18" max="70" placeholder="ej. 18" required>
             </div>
 
             <div class="form-group">
@@ -45,9 +45,9 @@
             <div class="form-group">
                 <label for="hospital">Hospital de preferencia</label>
                 <select name="hospital" id="hospital">
-                    <option value="hospital-1">Hospital Civil de Guadalajara</option>
-                    <option value="hospital-1">Hospital Civil Juan I. Menchaca</option>
-                    <option value="hospital-1">Hospital General de Occidente</option>
+                    <option value="hospital-civil">Hospital Civil de Guadalajara</option>
+                    <option value="hospital-menchaca">Hospital Civil Juan I. Menchaca</option>
+                    <option value="hospital-occidente">Hospital General de Occidente</option>
                     <option value="otro">Otro / No estoy seguro</option>
                 </select>
             </div>
@@ -64,7 +64,7 @@
 
             <div class="form-group">
                 <label for="correo">Correo electrónico</label>
-                <input type="email" id="correo" name="correo" required>
+                <input type="email" id="correo" name="correo" required placeholder="ejemplo@gmail.com">
             </div>
 
             <div class="form-group">

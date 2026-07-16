@@ -119,7 +119,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1 rem var(--espacio-md);
+    padding: 1.6 rem var(--espacio-md);
 }
 
 .logo h1 {
@@ -276,7 +276,7 @@ p {
     color: var(--azul-marino);
 }
 
-.form-group,
+.form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
@@ -345,6 +345,22 @@ p {
     color: var(--gris-neutro);
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+}
+
+.logo h1 {
+    font-size: 1.3rem;
+}
+
+
 /* Hacer que el contenido se vea igual encelulares y tablets*/
 @media (max-width: 768px) {
     .header-container {
@@ -371,5 +387,100 @@ p {
     .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+}
+
+
+.teaser-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--espacio-lg) var(--espacio-md);
+    text-align: center;
+}
+
+.teaser-title {
+    margin-bottom: var(--espacio-md);
+}
+
+.teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-md);
+    text-align: left;
+}
+
+.teaser-card {
+    background-color: var(--gris-claro);
+    border-radius: var(--radio-borde);
+    padding: var(--espacio-md);
+    border-top: 4px solid var(--mostaza);
+    transition: transform 0.2s ease;
+}
+
+.teaser-card:hover {
+    transform: translateY(-4px);
+}
+
+.teaser-card h3 {
+    color: var(--azul-marino);
+}
+
+.teaser-card a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--coral);
+    font-weight: 600;
+}
+
+.voces-section {
+    background-color: var(--azul-medio);
+    color: var(--blanco);
+    text-align: center;
+    padding: var(--espacio-lg) var(--espacio-md);
+}
+
+.voces-section .teaser-title {
+    color: var(--blanco);
+}
+
+.voces-subtitle {
+    color: var(--turquesa);
+    margin-bottom: var(--espacio-md);
+}
+
+.voces-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-md);
+}
+
+.voz-card {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radio-borde);
+    padding: var(--espacio-md);
+}
+
+.voz-icono {
+    color: var(--coral);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.voz-frase {
+    font-family: var(--fuente-display);
+    font-style: italic;
+    color: var(--gris-claro);
+    margin-bottom: 0;
+}
+
+/* Responsive: apilar tarjetas en celular */
+@media (max-width: 768px) {
+
+    .teaser-grid,
+    .voces-grid {
+        grid-template-columns: 1fr;
     }
 }
