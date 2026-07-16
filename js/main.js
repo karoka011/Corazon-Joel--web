@@ -128,8 +128,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+        //VALIDACION: CORREO
+        const correo = document.getElementById('correo');
+        const errorCorreo = document.getElementById('error-correo');
+        const correoLimpio = correo.value.trim();
+        const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+        if (correoLimpio == '') {
+            errorCorreo.textContent = 'Por favor ingresa tu correo electrónico';
+            esValido = false;
 
+        } else if (!regexCorreo.test(correoLimpio)) {
+            errorCorreo.textContent = 'Ingresa un correo válido (ej. nombre@correo.com)';
+            esValido = false;
+
+        } else {
+            errorCorreo.textContent = '';
+        }
 
 
         if (esValido) { //solo lo activamos cuando todas las validaciones sean correctas
