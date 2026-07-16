@@ -493,3 +493,15 @@ p {
     margin-top: 4px;
     min-height: 1em;
 }
+
+/*Temporalmente mensaje de exito al completar el forms*/
+.mensaje-exito {
+    display: none;
+    color: #72dec6;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.mensaje-exito.visible {
+    display: block;
+}

@@ -168,7 +168,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (esValido) { //solo lo activamos cuando todas las validaciones sean correctas
             console.log('Formulario válido, listo para enviar a la base de datos')
+
+
+            const mensaje = document.getElementById('mensaje-formulario');
+            mensaje.textContent = 'Formulario válido';
+            mensaje.classList.add('visible');
+
+            form.reset();
+
+            setTimeout(() => {
+                mensaje.classList.remove('visible');
+            }, 4000)
+
             //form.submit();   //se activara cuando conectemos a fs
+
         }
     });
 });
