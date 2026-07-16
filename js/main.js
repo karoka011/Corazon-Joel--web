@@ -98,6 +98,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
+
+
+        //VALIDACION: HOSPITAL 
+        const hospital = document.getElementById('hospital');
+        const errorHospital = document.getElementById('error-hospital');
+
+        if (hospital.value === '') {
+            errorHospital.textContent = ' Por favor selecciona un hopital de preferencia.';
+            esValido = false;
+        } else {
+            errorHospital.textContent = '';
+        }
+
+
+
+
         if (esValido) { //solo lo activamos cuando todas las validaciones sean correctas
             console.log('Formulario válido, listo para enviar a la base de datos')
             //form.submit();   //se activara cuando conectemos a fs
