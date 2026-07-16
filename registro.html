@@ -49,20 +49,24 @@
             <div class="form-group">
                 <label for="hospital">Hospital de preferencia</label>
                 <select name="hospital" id="hospital">
+                    <option value="" disabled selected>Selecciona un hospital</option>
                     <option value="hospital-civil">Hospital Civil de Guadalajara</option>
                     <option value="hospital-menchaca">Hospital Civil Juan I. Menchaca</option>
                     <option value="hospital-occidente">Hospital General de Occidente</option>
                     <option value="otro">Otro / No estoy seguro</option>
+                    <small class="error-mensaje" id="error-hospital"></small>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="disponibilidad">Disponibilidad de horario</label>
                 <select name="disponibilidad" id="disponibilidad">
+                    <option value="" disabled selected>Selecciona tu disponibilidad</option>
                     <option value="manana">Mañanas</option>
                     <option value="tarde">Tardes</option>
                     <option value="fin-semana">Fines de semana</option>
                     <option value="flexible">Flexible</option>
+                    <small class="error-mensaje" id="error-disponibilidad"></small>
                 </select>
             </div>
 

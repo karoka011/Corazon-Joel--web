@@ -79,6 +79,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+        //VALIDACION DE LA MOTIVACION
+        const motivacion = document.getElementById('motivacion');
+        const errorMotivacion = document.getElementById('error-motivacion');
+        const motivacionLimpia = motivacion.value.trim();
+        const MIN_CARACTERES_MOTIVACION = 30;
+
+        if (motivacionLimpia === '') {
+            errorMotivacion.textContent = 'Por favor cuéntanos por qué te gustaría participar.';
+            esValido = false;
+
+        } else if (motivacionLimpia.length < MIN_CARACTERES_MOTIVACION) {
+            errorMotivacion.textContent = `Cuéntanos un poco más (mínimo ${MIN_CARACTERES_MOTIVACION} caracteres, llevas ${motivacionLimpia.length}).`;
+            esValido = false;
+
+        } else {
+            errorMotivacion.textContent = '';
+        }
+
 
         if (esValido) { //solo lo activamos cuando todas las validaciones sean correctas
             console.log('Formulario válido, listo para enviar a la base de datos')
