@@ -484,3 +484,12 @@ p {
         grid-template-columns: 1fr;
     }
 }
+
+/*ERRORES DEL FORMULARIO*/
+.error-mensaje {
+    display: block;
+    color: #f16047;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    min-height: 1em;
+}
