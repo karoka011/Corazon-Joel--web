@@ -33,7 +33,18 @@ arrulladoras-web/
 │   └── main.js             # Lógica del sitio y validaciones del formulario
 └── img/                    # Recursos gráficos (logo, fotos, etc.)
 ```
+## Progreso Realizado
 
+- [x] Estructura HTML de todas las páginas + header/footer reutilizables
+- [x] Identidad visual completa aplicada en CSS
+- [x] Validaciones de formulario en JavaScript
+- [x] Proyecto Firebase creado, Firestore configurado con reglas de seguridad
+- [ ] Conectar el formulario a Firestore (`addDoc`) para guardar postulantes
+- [ ] Desplegar el sitio con Firebase Hosting
+- [ ] Pruebas end-to-end y ajustes
+- [ ] (Opcional) Panel simple de administración para ver registros
+- [ ] Automatización de correos por cambio de estado (extensión Trigger Email de Firebase)
+- [ ] Dashboards de KPIs, bandeja de postulantes y expediente digital (fase posterior)
 
 ## Como correr el proyecto localmente (por ahora)
 
