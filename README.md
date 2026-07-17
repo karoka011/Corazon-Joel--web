@@ -28,6 +28,19 @@ arrulladoras-web/
 └── img/                    # Recursos gráficos (logo, fotos, etc.)
 
 
+## Como correr el proyecto localmente (por ahora)
+Clona el repositorio:
+
+
+   git clone <url-del-repositorio>
+   cd arrulladoras-web
+
+
+Abre la carpeta en VS Code.
+Instala la extensión Live Server (si no la tienes).
+Click derecho sobre index.html → "Open with Live Server".
+El sitio se abrirá en http://127.0.0.1:5500 (o puerto similar) con header y footer cargando correctamente.
+
 ## Contribuciones
 Este proyecto es parte del trabajo de servicio social para la organización Corazón Joel de Jesús. Si formas parte de un futuro periodo de servicio social o voluntariado técnico y quieres continuarlo, contacta a la organización para coordinar acceso al proyecto de Firebase y a los lineamientos de marca.
 
