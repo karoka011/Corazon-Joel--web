@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             //Revisar conexion antes de guardar
             if (!navigator.onLine) {
-                mensaje.textContent = 'Parece que no tienes conexión ainternet. Revisa tu red e intenta de nuevo';
+                mensaje.textContent = 'Parece que no tienes conexión a internet. Revisa tu red e intenta de nuevo';
                 mensaje.className = 'mensaje-formulario-caja mensaje-error visible';
 
                 setTimeout(() => { mensaje.classList.remove('visible'); }, 5000);
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // unavailable = problema de red/servidos 
                 if (error.code === 'unavailable') {
-                    mensaje.textContent = 'No pudimos conectar con el sservidor. Revisa tu conexión e intenta de nuevo en una momentos';
+                    mensaje.textContent = 'No pudimos conectar con el servidor. Revisa tu conexión e intenta de nuevo en una momentos';
 
                     //permision-denied = por si se cambian las regals de seguridad y algo falla
                 } else if (error.code === 'permission-denied') {
