@@ -175,7 +175,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const mensaje = document.getElementById('mensaje-formulario');
             const boton = form.querySelector('button[type = "submit"]');
 
+            //Revisar conexion antes de guardar
+            if (!navigator.onLine) {
+                mensaje.textContent = 'Parece que no tienes conexión ainternet. Revisa tu red e intenta de nuevo';
+                mensaje.className = 'mensaje-formulario-caja mensaje-error visible';
 
+                setTimeout(() => { mensaje.classList.remove('visible'); }, 5000);
+
+                return; //no seguimos si no hay internet
+            }
 
             //Sesabilito el boton para enviar un doble envio mientras la info se guarda
             boton.disabled = true;
@@ -211,15 +219,28 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 await addDoc(collection(db, 'convocatorias', '2026-Q1', 'postulantes'), postulante);
 
-                mensaje.textContent = '¡Registro Exitoso!';
-                mensaje.classList.remove('mensaje-error');
-                mensaje.classList.add('visible');
+                mensaje.textContent = `¡Gracias, ${nombreLimpio.split(' ')[0]}! Tu registro fué recibido. Muy pronto alguien del equipo se pondrá en contacto contigo`;
+                mensaje.className = 'mensaje-formulario-caja mensaje-exitoso visible';
 
                 form.reset();
+
             } catch (error) {
                 console.error('Error al guardar el registro: ', error);
-                mensaje.textContent = 'Ocurrió un error al enviar tu registro. Por favor intenta de nuevo';
-                mensaje.classList.add('visible', 'mensaje-error');
+
+                // unavailable = problema de red/servidos 
+                if (error.code === 'unavailable') {
+                    mensaje.textContent = 'No pudimos conectar con el sservidor. Revisa tu conexión e intenta de nuevo en una momentos';
+
+                    //permision-denied = por si se cambian las regals de seguridad y algo falla
+                } else if (error.code === 'permission-denied') {
+                    mensaje.textContent = 'No se pudo completar el registro. Por favor contacta a la organización';
+
+                } else {
+                    mensaje.textContent = 'Ocurrió un error inesperado al enviar el registro. Intenta de nuevo';
+                }
+
+                mensaje.className = 'mensaje-formulario-caja mensaje-error visible';
+
             } finally {
                 boton.disabled = false;
                 boton.textContent = 'Enviar registro';

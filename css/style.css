@@ -527,7 +527,7 @@ p {
 }
 
 /*Exito*/
-.mensaje-exito {
+.mensaje-exitoso {
     background: rgba(114, 222, 198, 0.18);
     border: 1px solid rgba(114, 222, 198, 0.5);
     backdrop-filter: blur(6px);
