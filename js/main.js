@@ -175,6 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const mensaje = document.getElementById('mensaje-formulario');
             const boton = form.querySelector('button[type = "submit"]');
 
+
+
             //Sesabilito el boton para enviar un doble envio mientras la info se guarda
             boton.disabled = true;
             boton.textContent = "Enviando...";
