@@ -1,8 +1,13 @@
+import { getFirestore, collection, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+//La instancia de Firestare que ya esta en registro.html
+const db = window.db;
+
 document.addEventListener('DOMContentLoaded', () => {
     //DOMContentLoaded asegura que el js corracuando el HTML ya cargo
 
     const form = document.getElementById('form-registro');
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
 
         e.preventDefault(); //Evita que se envie mientras se prueban las validaciones
 
@@ -167,18 +172,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         if (esValido) { //solo lo activamos cuando todas las validaciones sean correctas
-            console.log('Formulario válido, listo para enviar a la base de datos')
-
-
             const mensaje = document.getElementById('mensaje-formulario');
-            mensaje.textContent = 'Formulario válido';
-            mensaje.classList.add('visible');
+            const boton = form.querySelector('button[type = "submit"]');
 
-            form.reset();
+            //Sesabilito el boton para enviar un doble envio mientras la info se guarda
+            boton.disabled = true;
+            boton.textContent = "Enviando...";
 
-            setTimeout(() => {
-                mensaje.classList.remove('visible');
-            }, 4000)
+            const ahora = new Date();
+
+            // se contruye el objeto del postulante con los 8 campos + metadatos
+            const postulante = {
+                nombre: nombreLimpio,
+                edad: edadNumero,
+                ocupacion: ocupacionLimpia,
+                motivacion: motivacionLimpia,
+                hospital_seleccionado: hospital.options[hospital.selectedIndex].text, //registra el nombre del hospital
+                disponibilidad: disponibilidad.value,
+                gmail: correoLimpio,
+                celular: celularDigitos,
+
+                metadatos: {
+                    fecha_registro: Timestamp.fromDate(ahora),
+                    anio_registro: ahora.getFullYear(),
+                    mes_registro: ahora.getMonth() + 1
+                },
+
+                estado_proceso: 'pendiente',
+                filtros: {
+                    evaluacion_psicologica: 'pendiente',
+                    documentos_completos: false,
+                    salud_fisica: false
+                }
+            };
+
+            try {
+                await addDoc(collection(db, 'convocatorias', '2026-Q1', 'postulantes'), postulante);
+
+                mensaje.textContent = '¡Registro Exitoso!';
+                mensaje.classList.remove('mensaje-error');
+                mensaje.classList.add('visible');
+
+                form.reset();
+            } catch (error) {
+                console.error('Error al guardar el registro: ', error);
+                mensaje.textContent = 'Ocurrió un error al enviar tu registro. Por favor intenta de nuevo';
+                mensaje.classList.add('visible', 'mensaje-error');
+            } finally {
+                boton.disabled = false;
+                boton.textContent = 'Enviar registro';
+
+                setTimeout(() => {
+                    mensaje.classList.remove('visible');
+                }, 4000);
+            }
 
             //form.submit();   //se activara cuando conectemos a fs
 
