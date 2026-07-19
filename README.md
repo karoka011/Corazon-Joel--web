@@ -39,7 +39,7 @@ arrulladoras-web/
 - [x] Identidad visual completa aplicada en CSS
 - [x] Validaciones de formulario en JavaScript
 - [x] Proyecto Firebase creado, Firestore configurado con reglas de seguridad
-- [ ] Conectar el formulario a Firestore (`addDoc`) para guardar postulantes
+- [x] Conectar el formulario a Firestore (`addDoc`) para guardar postulantes
 - [ ] Desplegar el sitio con Firebase Hosting
 - [ ] Pruebas end-to-end y ajustes
 - [ ] (Opcional) Panel simple de administración para ver registros
