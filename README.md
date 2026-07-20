@@ -14,6 +14,7 @@
 | Base de datos (planeada) | Firebase Firestore |
 | Hosting (planeado) | Firebase Hosting |
 | Entorno de desarrollo | VS Code + extensión **Live Server** |
+| Despliegue | Firebase CLI |
 
 
 ## Estructura del Proyecto
@@ -33,6 +34,18 @@ arrulladoras-web/
 │   └── main.js             # Lógica del sitio y validaciones del formulario
 └── img/                    # Recursos gráficos (logo, fotos, etc.)
 ```
+
+## Modelo de Datos (Firestore)
+
+Cada documento incluye los campos del formulario (nombre, edad, ocupacion, motivacion, hospital_seleccionado, disponibilidad, gmail, celular), metadatos de registro, estado_proceso, y un objeto filtros para el seguimiento del proceso de selección.
+
+## Desplegar cambios
+Los cambios no se publican automáticamente, solo despues de ediatar y probarlos en local
+    ```bash
+        firebase deploy --only hosting
+    ```
+Requiere tener Firebase CLI instalado y haber iniciado sesión con firebase login
+
 ## Progreso Realizado
 
 - [x] Estructura HTML de todas las páginas + header/footer reutilizables
@@ -40,7 +53,7 @@ arrulladoras-web/
 - [x] Validaciones de formulario en JavaScript
 - [x] Proyecto Firebase creado, Firestore configurado con reglas de seguridad
 - [x] Conectar el formulario a Firestore (`addDoc`) para guardar postulantes
-- [ ] Desplegar el sitio con Firebase Hosting
+- [x] Desplegar el sitio con Firebase Hosting
 - [ ] Pruebas end-to-end y ajustes
 - [ ] (Opcional) Panel simple de administración para ver registros
 - [ ] Automatización de correos por cambio de estado (extensión Trigger Email de Firebase)
