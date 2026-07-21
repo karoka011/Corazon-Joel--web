@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panel de Postulantes - Arrulladoras</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <section class="login-class">
+        <div id="login-box">
+            <h2>Acceso administrador</h2>
+            <input type="email" id="login-email" placeholder="Correo@gmail.com">
+            <input type="password" id="login-pass" placeholder="Contraseña">
+            <button id="btn-login">Enviar</button>
+            <p id="login-error"></p>
+        </div>
+    </section>
+
+    <section class="Panel-Section">
+
+        <div id="panel-box">
+            <h2>Postulantes-Convocatorio 2026</h2>
+            <button id="Cerrar Sesion">Cerra sesión</button>
+
+            <div class="filtros">
+                <select name="filtro-hospital">
+                    <option value="">Todos los hospitales</option>
+                </select>
+
+                <select id="filtro-estado">
+                    <option value="">Todos los estados</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="preseleccionado">Preseleccionado</option>
+                    <option value="entrevistado">Entrevistado</option>
+                    <option value="aprobado">Aprobado</option>
+                    <option value="rechazado">Rechazado</option>
+                </select>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Hospital</th>
+                        <th>Disponiblidad</th>
+                        <th>Celular</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabla-postulantes"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <script type="module" src="firebase.js"></script>
+</body>
+
+</html>
