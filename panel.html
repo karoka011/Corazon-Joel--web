@@ -3,62 +3,72 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Panel de Postulantes - Arrulladoras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Postulantes — Arrulladoras</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/panel.css">
 </head>
 
-<body>
+<body class="panel-body">
 
-    <section class="login-class">
-        <div id="login-box">
-            <h2>Acceso administrador</h2>
-            <input type="email" id="login-email" placeholder="Correo@gmail.com">
-            <input type="password" id="login-pass" placeholder="Contraseña">
-            <button id="btn-login">Enviar</button>
-            <p id="login-error"></p>
+    <!-- Vista de login -->
+    <div id="login-box" class="panel-login">
+        <img src="img/logo.png" alt="Arrulladoras" class="panel-login__logo">
+        <h1 class="panel-login__titulo">Panel de administración</h1>
+        <p class="panel-login__subtitulo">Corazón Joel de Jesús — Arrulladoras</p>
+
+        <input type="email" id="login-email" placeholder="Correo" class="panel-input">
+        <input type="password" id="login-pass" placeholder="Contraseña" class="panel-input">
+        <button id="btn-login" class="panel-btn panel-btn--primario">Entrar</button>
+        <p id="login-error" class="panel-login__error"></p>
+    </div>
+
+    <!-- Vista del panel -->
+    <div id="panel-box" class="panel-contenido">
+        <header class="panel-header">
+            <h1>Postulantes — Convocatoria 2026-Q1</h1>
+            <button id="btn-logout" class="panel-btn panel-btn--secundario">Cerrar sesión</button>
+        </header>
+
+        <div class="panel-filtros">
+            <select id="filtro-hospital" class="panel-select">
+                <option value="">Todos los hospitales</option>
+            </select>
+
+            <select id="filtro-estado" class="panel-select">
+                <option value="">Todos los estados</option>
+                <option value="pendiente">Pendiente</option>
+                <option value="preseleccionado">Preseleccionado</option>
+                <option value="entrevistado">Entrevistado</option>
+                <option value="aprobado">Aprobado</option>
+                <option value="rechazado">Rechazado</option>
+            </select>
+
+            <span id="contador-resultados" class="panel-contador"></span>
         </div>
-    </section>
 
-    <section class="Panel-Section">
-
-        <div id="panel-box">
-            <h2>Postulantes-Convocatorio 2026</h2>
-            <button id="Cerrar Sesion">Cerra sesión</button>
-
-            <div class="filtros">
-                <select name="filtro-hospital">
-                    <option value="">Todos los hospitales</option>
-                </select>
-
-                <select id="filtro-estado">
-                    <option value="">Todos los estados</option>
-                    <option value="pendiente">Pendiente</option>
-                    <option value="preseleccionado">Preseleccionado</option>
-                    <option value="entrevistado">Entrevistado</option>
-                    <option value="aprobado">Aprobado</option>
-                    <option value="rechazado">Rechazado</option>
-                </select>
-            </div>
-
-            <table>
+        <div class="panel-tabla-wrap">
+            <table class="panel-tabla">
                 <thead>
                     <tr>
                         <th>Nombre</th>
                         <th>Edad</th>
                         <th>Hospital</th>
-                        <th>Disponiblidad</th>
+                        <th>Disponibilidad</th>
                         <th>Celular</th>
                         <th>Estado</th>
                     </tr>
                 </thead>
-
                 <tbody id="tabla-postulantes"></tbody>
             </table>
+            <p id="sin-resultados" class="panel-sin-resultados" style="display:none;">
+                No hay postulantes con esos filtros.
+            </p>
         </div>
-    </section>
+    </div>
 
     <script type="module" src="firebase.js"></script>
+    <script type="module" src="js/panel.js"></script>
 </body>
 
 </html>
