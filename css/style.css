@@ -23,6 +23,7 @@
 
     /* Espaciado reutilizable */
     --espacio-sm: 1rem;
+    /*mas o menos 16 px*/
     --espacio-md: 2rem;
     --espacio-lg: 4rem;
     --radio-borde: 10px;
