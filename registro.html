@@ -91,23 +91,9 @@
     </section>
 
     <!--Firebase SDKs (modo módulo)-->
+    <script type="module" src="./js/firebase.js"></script>
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyDs4yPkR2NxxUyd5jDaVYAZrozxiBWvQw4",
-            authDomain: "arrulladoras.firebaseapp.com",
-            projectId: "arrulladoras",
-            storageBucket: "arrulladoras.firebasestorage.app",
-            messagingSenderId: "344116098962",
-            appId: "1:344116098962:web:2d7d6b4b8d2ad6b3e3b34b"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        //Se hace que el main.js (no es módulo) pueda usar db
+        import { db } from "./js/firebase.js";
         window.db = db;
     </script>
 
